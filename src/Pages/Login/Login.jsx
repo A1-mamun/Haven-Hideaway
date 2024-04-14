@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, signInGoogle, singInGithub } = useContext(AuthContext);
 
   const handleLogIn = (e) => {
     e.preventDefault();
@@ -22,11 +22,17 @@ const Login = () => {
 
   const handleLogInWithGoogle = (e) => {
     e.preventDefault();
-    console.log("google clicked");
+    // console.log("google clicked");
+    signInGoogle()
+      .then((result) => console.log(result.user))
+      .catch((error) => console.error(error));
   };
   const handleLogInWithGithub = (e) => {
     e.preventDefault();
-    console.log("github clicked");
+    // console.log("github clicked");
+    singInGithub()
+      .then((result) => console.log(result.user))
+      .catch((error) => console.error(error));
   };
   return (
     <div className="hero h-full bg-base-200 py-10 rounded-xl">
