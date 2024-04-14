@@ -1,15 +1,23 @@
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProviders";
 
 const Login = () => {
+  const { signIn } = useContext(AuthContext);
+
   const handleLogIn = (e) => {
     e.preventDefault();
-    console.log(e.currentTarget);
+    // console.log(e.currentTarget);
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
-    console.log(email, password);
+    // console.log(email, password);
+
+    signIn(email, password)
+      .then((result) => console.log(result.user))
+      .catch((error) => console.error(error));
   };
 
   const handleLogInWithGoogle = (e) => {
