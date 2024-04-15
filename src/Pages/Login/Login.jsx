@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
+import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 
 const Login = () => {
+  const [error, setError] = useState("");
+  const [succes, setSucces] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const { signIn, signInGoogle, singInGithub } = useContext(AuthContext);
 
   const handleLogIn = (e) => {
@@ -14,10 +18,16 @@ const Login = () => {
     const email = form.get("email");
     const password = form.get("password");
     // console.log(email, password);
-
+    // reset eror
+    setError("");
+    setSucces("");
     signIn(email, password)
-      .then((result) => console.log(result.user))
-      .catch((error) => console.error(error));
+      .then((result) => setSucces("Loged in successfully"))
+      .catch((error) => {
+        const fullError = error.message;
+        const shortError = fullError.slice(22, fullError.length - 2);
+        setError(shortError);
+      });
   };
 
   const handleLogInWithGoogle = (e) => {
@@ -52,17 +62,23 @@ const Login = () => {
                 required
               />
             </div>
-            <div className="form-control">
+            <div className="form-control relative">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 name="password"
                 placeholder="Enter your password"
                 className="input input-bordered"
                 required
               />
+              <span
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute top-[52px] right-4"
+              >
+                {showPassword ? <IoEyeOffOutline /> : <IoEyeOutline />}
+              </span>
               <label className="label">
                 <a href="#" className="label-text-alt link link-hover">
                   Forgot password?
@@ -73,6 +89,9 @@ const Login = () => {
               <button className="btn btn-primary">Login</button>
             </div>
           </form>
+          {error && <p className="text-red-700">{error}</p>}
+          {succes && <p className="text-green-600">{succes}</p>}
+
           <div className="card-body pt-2">
             <div className="flex justify-between items-center">
               <div className="border border-gray-500 h-[1px] grow"></div>
