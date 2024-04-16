@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
+import { useForm } from "react-hook-form";
 
 const Register = () => {
   const [error, setError] = useState("");
@@ -9,14 +10,17 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { createUser } = useContext(AuthContext);
 
-  const handleRegister = (e) => {
-    e.preventDefault();
-    const form = new FormData(e.currentTarget);
-    const name = form.get("name");
-    const photo = form.get("photo");
-    const email = form.get("email");
-    const password = form.get("password");
-    // console.log(name, photo, email, password);
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    // console.log(data);
+    const { name, photo, email, password } = data;
+
     // reset error
     setError("");
     setSucces("");
@@ -46,7 +50,7 @@ const Register = () => {
       <div className="hero-content ">
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <h2 className="text-3xl text-center pt-5">Register your account</h2>
-          <form onSubmit={handleRegister} className="card-body">
+          <form onSubmit={handleSubmit(onSubmit)} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Your Name</span>
@@ -56,8 +60,11 @@ const Register = () => {
                 name="name"
                 placeholder="Enter your name"
                 className="input input-bordered"
-                required
+                {...register("name", { required: true })}
               />
+              {errors.name && (
+                <span className="text-red-700">This field is required</span>
+              )}
             </div>
             <div className="form-control">
               <label className="label">
@@ -68,8 +75,11 @@ const Register = () => {
                 name="photo"
                 placeholder="Enter your Photo URL"
                 className="input input-bordered"
-                required
+                {...register("photo", { required: true })}
               />
+              {errors.photo && (
+                <span className="text-red-700">This field is required</span>
+              )}
             </div>
             <div className="form-control">
               <label className="label">
@@ -80,8 +90,11 @@ const Register = () => {
                 name="email"
                 placeholder="Enter your email address"
                 className="input input-bordered"
-                required
+                {...register("email", { required: true })}
               />
+              {errors.email && (
+                <span className="text-red-700">This field is required</span>
+              )}
             </div>
             <div className="form-control relative">
               <label className="label">
@@ -92,8 +105,11 @@ const Register = () => {
                 name="password"
                 placeholder="Enter your password"
                 className="input input-bordered"
-                required
+                {...register("password", { required: true })}
               />
+              {errors.password && (
+                <span className="text-red-700">This field is required</span>
+              )}
               <span
                 onClick={() => setShowPassword(!showPassword)}
                 className="absolute top-[52px] right-4"
@@ -105,8 +121,8 @@ const Register = () => {
               <button className="btn btn-primary">Register</button>
             </div>
           </form>
-          {error && <p className="text-red-700">{error}</p>}
-          {succes && <p className="text-green-600">{succes}</p>}
+          {error && <p className="text-red-700 text-center">{error}</p>}
+          {succes && <p className="text-green-600 text-center">{succes}</p>}
           <h2 className="text-center pb-5">
             Already Have An Account ?
             <Link to="/login" className="text-orange-700 font-medium">

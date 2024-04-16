@@ -1,0 +1,100 @@
+[
+  {
+    "id": 1,
+    "estate_title": "Luxury Beach Resort",
+    "segment_name": "Resort",
+    "description": "Experience unparalleled luxury at our beachfront resort. Nestled along the pristine shores of Miami Beach, our resort offers a sanctuary of relaxation and indulgence. With breathtaking ocean views from every angle, you'll be swept away by the beauty of the azure waters. Our spacious suites and villas are elegantly appointed with modern amenities and plush furnishings, ensuring your comfort throughout your stay. Indulge your senses with a rejuvenating spa treatment, savor exquisite cuisine at our oceanfront restaurant, or simply lounge by the infinity pool with a refreshing cocktail in hand. Whether you're seeking a romantic getaway, a family retreat, or a corporate event venue, our resort caters to every need with impeccable service and attention to detail. Come experience the ultimate beachfront escape at our Luxury Beach Resort.",
+    "price": "$500 per night",
+    "status": "rent",
+    "area": "5000 sq ft",
+    "location": "Miami, Florida",
+    "facilities": ["beach access", "swimming pool", "spa", "restaurant"],
+    "image": "beach_resort.jpg",
+    "view_property_button": "View Property"
+  },
+  {
+    "id": 2,
+    "estate_title": "Cozy Mountain Lodge",
+    "segment_name": "Lodge",
+    "description": "Escape to the serene mountainside and unwind in our cozy lodge. Located amidst the breathtaking scenery of Aspen, Colorado, our lodge offers a tranquil retreat from the hustle and bustle of everyday life. Whether you're seeking adventure on the nearby hiking trails or simply looking to relax and rejuvenate in nature's embrace, our lodge provides the perfect setting for your mountain getaway. Warm yourself by the crackling fireplace in the evenings, soak in the outdoor hot tub under a blanket of stars, or treat yourself to a gourmet meal at our onsite restaurant. With comfortable accommodations and personalized service, our lodge promises a memorable stay for solo travelers, couples, and families alike. Come discover the magic of the mountains at our Cozy Mountain Lodge.",
+    "price": "$300 per night",
+    "status": "rent",
+    "area": "2500 sq ft",
+    "location": "Aspen, Colorado",
+    "facilities": ["fireplace", "hiking trails", "hot tub", "restaurant"],
+    "image": "mountain_lodge.jpg",
+    "view_property_button": "View Property"
+  },
+  {
+    "id": 3,
+    "estate_title": "Urban Boutique Hotel",
+    "segment_name": "Hotel",
+    "description": "Indulge in the vibrant city life at our boutique hotel. Situated in the heart of New York City, our hotel offers a stylish retreat amidst the bustling energy of the urban landscape. Step inside and experience the chic design and contemporary comfort of our guest rooms and suites, each thoughtfully curated to provide a restful haven amid the city's hustle and bustle. Start your day with a workout in our fitness center or enjoy a leisurely breakfast at our onsite cafe. Explore the city's iconic landmarks and attractions, then return to our hotel for a relaxing evening on the rooftop bar, where you can take in panoramic views of the skyline. Whether you're visiting for business or pleasure, our boutique hotel provides the perfect blend of sophistication and convenience for your stay in the city that never sleeps.",
+    "price": "$200 per night",
+    "status": "rent",
+    "area": "1500 sq ft",
+    "location": "New York City, New York",
+    "facilities": [
+      "rooftop bar",
+      "fitness center",
+      "concierge service",
+      "cafe"
+    ],
+    "image": "boutique_hotel.jpg",
+    "view_property_button": "View Property"
+  },
+  {
+    "id": 4,
+    "estate_title": "Charming Guesthouse",
+    "segment_name": "Guesthouse",
+    "description": "Experience true hospitality at our charming guesthouse. Nestled in the historic district of Charleston, South Carolina, our guesthouse offers a warm and welcoming atmosphere that will make you feel right at home. Each of our well-appointed rooms is filled with character and charm, providing a cozy retreat after a day of exploring the city's cobblestone streets and antebellum architecture. Wake up to the aroma of freshly brewed coffee and homemade breakfast served in our garden courtyard. Take a leisurely stroll to nearby shops and restaurants, or simply relax with a book in our inviting communal living room. With attentive service and personalized touches, our guesthouse is the perfect choice for travelers seeking a memorable stay in Charleston.",
+    "price": "$100 per night",
+    "status": "rent",
+    "area": "1000 sq ft",
+    "location": "Charleston, South Carolina",
+    "facilities": [
+      "garden",
+      "homemade breakfast",
+      "free Wi-Fi",
+      "bicycle rental"
+    ],
+    "image": "guesthouse.jpg",
+    "view_property_button": "View Property"
+  },
+  {
+    "id": 5,
+    "estate_title": "Seaside Vacation Rental",
+    "segment_name": "Vacation Rental",
+    "description": "Escape to the seaside and enjoy a relaxing vacation in our cozy rental. Located along the sun-kissed shores of Malibu, California, our vacation rental offers the ultimate beachfront retreat. Step outside your door and feel the soft sand between your toes as you soak up the California sunshine. Whether you're lounging on the private beach, grilling fresh seafood in the BBQ area, or catching waves with surf lessons, there's something for everyone to enjoy. Pet-friendly accommodations mean you can bring your furry friend along for the adventure. With stunning ocean views and a prime location near top attractions, our vacation rental is your home away from home in paradise.",
+    "price": "$1500 per week",
+    "status": "rent",
+    "area": "1800 sq ft",
+    "location": "Malibu, California",
+    "facilities": [
+      "private beach access",
+      "BBQ area",
+      "surfing lessons",
+      "pet-friendly"
+    ],
+    "image": "vacation_rental.jpg",
+    "view_property_button": "View Property"
+  },
+  {
+    "id": 6,
+    "estate_title": "Quaint Motel",
+    "segment_name": "Motel",
+    "description": "Experience the nostalgia of the open road at our quaint motel. Located along historic Route 66 in Arizona, our motel offers a charming retreat for travelers passing through the desert landscape. Each of our cozy rooms is equipped with modern amenities and comfortable furnishings to ensure a restful night's sleep. Wake up refreshed and enjoy a complimentary continental breakfast before hitting the road again. With convenient onsite parking and a 24-hour front desk, our motel provides everything you need for a comfortable and hassle-free stay. Whether you're embarking on a cross-country adventure or simply seeking a peaceful pit stop, our motel welcomes you with warm hospitality and a touch of retro charm.",
+    "price": "$80 per night",
+    "status": "rent",
+    "area": "1200 sq ft",
+    "location": "Route 66, Arizona",
+    "facilities": [
+      "parking",
+      "24-hour front desk",
+      "pet-friendly",
+      "continental breakfast"
+    ],
+    "image": "motel.jpg",
+    "view_property_button": "View Property"
+  }
+]
