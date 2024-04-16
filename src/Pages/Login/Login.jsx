@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
@@ -10,7 +10,9 @@ const Login = () => {
   const [succes, setSucces] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const { signIn, signInGoogle, singInGithub } = useContext(AuthContext);
-
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log("log in location", location);
   const handleLogIn = (e) => {
     e.preventDefault();
     // console.log(e.currentTarget);
@@ -22,7 +24,11 @@ const Login = () => {
     setError("");
     setSucces("");
     signIn(email, password)
-      .then((result) => setSucces("Loged in successfully"))
+      .then((result) => {
+        setSucces("Loged in successfully");
+        // navigate after sign in
+        navigate(location?.state ? location.state : "/");
+      })
       .catch((error) => {
         const fullError = error.message;
         const shortError = fullError.slice(22, fullError.length - 2);
@@ -34,14 +40,22 @@ const Login = () => {
     e.preventDefault();
     // console.log("google clicked");
     signInGoogle()
-      .then((result) => console.log(result.user))
+      .then((result) => {
+        setSucces("Loged in successfully");
+        // navigate after sign in
+        navigate(location?.state ? location.state : "/");
+      })
       .catch((error) => console.error(error));
   };
   const handleLogInWithGithub = (e) => {
     e.preventDefault();
     // console.log("github clicked");
     singInGithub()
-      .then((result) => console.log(result.user))
+      .then((result) => {
+        setSucces("Loged in successfully");
+        // navigate after sign in
+        navigate(location?.state ? location.state : "/");
+      })
       .catch((error) => console.error(error));
   };
   return (
