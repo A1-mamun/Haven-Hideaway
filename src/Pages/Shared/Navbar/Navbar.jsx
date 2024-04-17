@@ -20,7 +20,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 mt-10">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -52,15 +52,15 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navlinks}</ul>
       </div>
       <div className="navbar-end">
-        <div
-          tabIndex={0}
-          role="button"
-          className="btn btn-ghost btn-circle avatar mr-3"
-        >
-          <div className="w-10 rounded-full">
-            <img alt="Tailwind CSS Navbar component" src={userDefaultImg} />
+        {user && (
+          <div className=" tooltip mr-3" data-tip={user.displayName}>
+            <img
+              className="btn btn-circle"
+              alt="Profile picture"
+              src={user.photoURL}
+            />
           </div>
-        </div>
+        )}
         {user ? (
           <button onClick={handleSignOut} className="btn">
             Sign Out

@@ -42,6 +42,7 @@ const Login = () => {
     // console.log("google clicked");
     signInGoogle()
       .then((result) => {
+        console.log(result.user);
         setSucces("Loged in successfully");
         // navigate after sign in
         navigate(location?.state ? location.state : "/");

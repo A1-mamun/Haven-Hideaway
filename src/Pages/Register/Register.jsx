@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const [error, setError] = useState("");
@@ -38,7 +39,15 @@ const Register = () => {
       return;
     }
     createUser(email, password)
-      .then((result) => setSucces("User created Successfully"))
+      .then((result) => {
+        updateProfile(result.user, {
+          displayName: name,
+          photoURL: photo,
+        })
+          .then(() => console.log(result.user))
+          .catch((error) => console.error(error));
+        setSucces("User created Successfully");
+      })
       .catch((error) => {
         const fullError = error.message;
         const shortError = fullError.slice(22, fullError.length - 2);
@@ -126,7 +135,7 @@ const Register = () => {
             </div>
           </form>
           {error && <p className="text-red-700 text-center">{error}</p>}
-          {succes && <p className="text-green-600 text-center">{succes}</p>}
+          {succes && <p className="text-green text-center">{succes}</p>}
           <h2 className="text-center pb-5">
             Already Have An Account ?
             <Link to="/login" className="text-orange-700 font-medium">
