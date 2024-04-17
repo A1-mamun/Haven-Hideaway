@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -60,6 +61,9 @@ const Login = () => {
   };
   return (
     <div className="hero h-full bg-base-200 py-10 rounded-xl">
+      <Helmet>
+        <title>HavenHideaway | Login</title>
+      </Helmet>
       <div className="hero-content">
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <h2 className="text-3xl text-center">Login your account</h2>

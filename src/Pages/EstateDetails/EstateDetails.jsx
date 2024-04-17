@@ -1,5 +1,6 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import Facility from "../Home/Facility";
+import { Helmet } from "react-helmet-async";
 
 const EstateDetails = () => {
   const estates = useLoaderData();
@@ -18,6 +19,9 @@ const EstateDetails = () => {
   } = estate;
   return (
     <div className="mt-7 container mx-auto  px-3 md:px-5 lg:px-0 ">
+      <Helmet>
+        <title>HavenHideaway | Estate Details</title>
+      </Helmet>
       <div className="flex flex-col lg:flex-row gap-6 md:gap-10 lg:gap-16 lg:h-[600px] border border-dark-15  p-5 rounded-xl">
         <div className="rounded-2xl lg:w-1/2 flex justify-center items-center">
           <img

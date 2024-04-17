@@ -3,6 +3,7 @@ import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { useForm } from "react-hook-form";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const [error, setError] = useState("");
@@ -47,6 +48,9 @@ const Register = () => {
 
   return (
     <div className="hero h-full py-10 rounded-xl bg-base-200">
+      <Helmet>
+        <title>HavenHideaway | Register</title>
+      </Helmet>
       <div className="hero-content ">
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <h2 className="text-3xl text-center pt-5">Register your account</h2>
