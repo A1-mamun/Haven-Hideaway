@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
@@ -10,12 +10,11 @@ const Register = () => {
   const [error, setError] = useState("");
   const [succes, setSucces] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const { createUser } = useContext(AuthContext);
-
+  const { createUser, profileUpdate } = useContext(AuthContext);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
@@ -40,13 +39,14 @@ const Register = () => {
     }
     createUser(email, password)
       .then((result) => {
-        updateProfile(result.user, {
-          displayName: name,
-          photoURL: photo,
-        })
-          .then(() => console.log(result.user))
+        profileUpdate(name, photo)
+          .then(() => {
+            console.log("profile updated");
+            console.log(result.user);
+          })
           .catch((error) => console.error(error));
         setSucces("User created Successfully");
+        navigate("/");
       })
       .catch((error) => {
         const fullError = error.message;

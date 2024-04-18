@@ -1,7 +1,7 @@
-import Facility from "./Facility";
 import { Link } from "react-router-dom";
+import Facility from "../Home/Facility";
 
-const EstateCard = ({ estate }) => {
+const EstateOfferCard = ({ estate }) => {
   const {
     id,
     estate_title,
@@ -39,8 +39,12 @@ const EstateCard = ({ estate }) => {
         <p>{status}</p>
       </div>
       <div className="flex justify-between items-center mt-5">
-        <h4 className="text-2xl text-green font-semibold">{price}</h4>
-        <Link to={`/state/${id}`}>
+        <div className="flex gap-2 items-center">
+          <h4 className="text-2xl text-green font-semibold">{price}</h4>
+          <p className="badge badge-primary badge-lg font-bold">{offer}</p>
+        </div>
+
+        <Link to={`/offer-state/${id}`}>
           <button className="btn btn-success btn-sm">View Property</button>
         </Link>
       </div>
@@ -48,4 +52,4 @@ const EstateCard = ({ estate }) => {
   );
 };
 
-export default EstateCard;
+export default EstateOfferCard;

@@ -16,6 +16,7 @@ const EstateDetails = () => {
     location,
     facilities,
     image,
+    offer,
   } = estate;
   return (
     <div className="mt-7 container mx-auto  px-3 md:px-5 lg:px-0 ">
@@ -67,7 +68,15 @@ const EstateDetails = () => {
           </div>
           <hr />
           <div className="flex justify-between items-center mt-5">
-            <h2 className=" text-3xl text-green font-bold">{price}</h2>
+            <div className="flex gap-2 items-center">
+              <h2 className=" text-3xl text-green font-bold">{price}</h2>
+              {offer && (
+                <p className="badge badge-primary badge-lg font-bold">
+                  {offer}
+                </p>
+              )}
+            </div>
+
             <Link to="/">
               <button className="btn btn-accent">Home</button>
             </Link>
