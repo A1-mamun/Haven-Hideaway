@@ -1,8 +1,23 @@
-# React + Vite
+# HavenHideaway
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real state site for Hotel.
 
-Currently, two official plugins are available:
+## Deployment
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To deploy this project click
+
+[deploy](https://haven-hideaway.web.app/login)
+
+## Features
+
+- You can see all of our properties
+- Always have some offer
+- Can update your profile
+- To get our offer you should log in first
+- Can contact with us
+
+## Package
+
+- [Reack Hook form](https://react-hook-form.com/)
+- [AOS Package](http://michalsnik.github.io/aos/)
+- [Swiper Slider](https://swiperjs.com/)
