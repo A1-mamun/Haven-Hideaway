@@ -1,5 +1,7 @@
 [
   {
+    "animation": "fade-left",
+    "duration": "1000",
     "id": 1,
     "estate_title": "Luxury Beach Resort",
     "segment_name": "Resort",
@@ -12,6 +14,9 @@
     "image": "https://i.ibb.co/qWkCnfY/Luxury-Beach-Resort.jpg"
   },
   {
+    "animation": "zoom-in",
+    "delay": "200",
+    "duration": "1000",
     "id": 2,
     "estate_title": "Cozy Mountain Lodge",
     "segment_name": "Lodge",
@@ -24,6 +29,8 @@
     "image": "https://i.ibb.co/zsj5mH0/Cozy-Mountain-Lodge.jpg"
   },
   {
+    "animation": "fade-right",
+    "duration": "1000",
     "id": 3,
     "estate_title": "Urban Boutique Hotel",
     "segment_name": "Hotel",
@@ -41,6 +48,8 @@
     "image": "https://i.ibb.co/mSZWCPZ/Urban-Boutique-Hotel.jpg"
   },
   {
+    "animation": "fade-left",
+    "duration": "1000",
     "id": 4,
     "estate_title": "Charming Guesthouse",
     "segment_name": "Guesthouse",
@@ -58,6 +67,9 @@
     "image": "https://i.ibb.co/J7k4kxb/Charming-Guesthouse.jpg"
   },
   {
+    "animation": "zoom-in",
+    "delay": "200",
+    "duration": "1000",
     "id": 5,
     "estate_title": "Seaside Vacation Rental",
     "segment_name": "Vacation Rental",
@@ -75,6 +87,8 @@
     "image": "https://i.ibb.co/CK87xNS/Seaside-Vacation-Rental.jpg"
   },
   {
+    "animation": "fade-right",
+    "duration": "1000",
     "id": 6,
     "estate_title": "Quaint Motel",
     "segment_name": "Motel",

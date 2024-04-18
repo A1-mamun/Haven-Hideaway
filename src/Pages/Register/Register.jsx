@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
-import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const [error, setError] = useState("");

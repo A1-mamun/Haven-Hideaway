@@ -3,13 +3,11 @@ import { AuthContext } from "../../Providers/AuthProviders";
 import { Helmet } from "react-helmet-async";
 import { MdModeEditOutline } from "react-icons/md";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 
 const UpdateProfile = () => {
-  const { user, profileUpdate } = useContext(AuthContext);
+  const { user, profileUpdate, setUser } = useContext(AuthContext);
   const [nameIsDisable, setNameIsDisable] = useState(true);
   const [photoIsDisable, setPhotoIsDisable] = useState(true);
-  const navigate = useNavigate();
 
   const {
     register,
@@ -24,10 +22,10 @@ const UpdateProfile = () => {
     profileUpdate(name, photo)
       .then(() => {
         console.log("profile updated");
-        console.log(result.user);
+        const updatedUser = { ...user, displayName: name, photoURL: photo };
+        setUser(updatedUser);
       })
       .catch((error) => console.error(error));
-    navigate("/");
   };
   return (
     <div className="bg-base-200 text-center py-14 rounded-2xl">

@@ -13,10 +13,18 @@ const EstateCard = ({ estate }) => {
     facilities,
     image,
     offer,
+    animation,
+    delay,
+    duration,
   } = estate;
   const shortFacilities = facilities.slice(0, 2);
   return (
-    <div className="card bg-base-100 shadow-xl p-7 border border-dark-15 font-worksans flex flex-col h-full">
+    <div
+      data-aos={animation}
+      data-aos-delay={delay}
+      data-aos-duration={duration}
+      className="card bg-base-100 shadow-xl p-7 border border-dark-15 font-worksans flex flex-col h-full"
+    >
       <figure className="bg-dark-05 rounded-2xl">
         <img className="h-56 lg:h-72 w-full" src={image} alt={segment_name} />
       </figure>
